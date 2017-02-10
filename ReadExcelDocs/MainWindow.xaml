@@ -6,12 +6,13 @@
         xmlns:local="clr-namespace:ReadExcelDocs"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-  <DockPanel Margin="10">
-    <WrapPanel HorizontalAlignment="Center"
-               DockPanel.Dock="Top"
-               Margin="0,0,0,10">
-      <Button Name="btnOpenFile"
-              Click="btnOpenFile_Click">Open file</Button>
-    </WrapPanel>
-  </DockPanel>
+  <Grid>
+    <Button x:Name='button'
+            Content='Browes File'
+            HorizontalAlignment='Left'
+            VerticalAlignment='Top'
+            Click='btnBrowes_Click'
+            Width='75' />
+
+  </Grid>
 </Window>
