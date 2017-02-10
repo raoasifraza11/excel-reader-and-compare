@@ -6,7 +6,12 @@
         xmlns:local="clr-namespace:ReadExcelDocs"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+  <DockPanel Margin="10">
+    <WrapPanel HorizontalAlignment="Center"
+               DockPanel.Dock="Top"
+               Margin="0,0,0,10">
+      <Button Name="btnOpenFile"
+              Click="btnOpenFile_Click">Open file</Button>
+    </WrapPanel>
+  </DockPanel>
 </Window>
