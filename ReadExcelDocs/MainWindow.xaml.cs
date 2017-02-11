@@ -47,6 +47,24 @@ namespace ReadExcelDocs
 
             excelApp.Workbooks.Open(@"E:\excelbook.xlsx");
 
+            Excel.Worksheet workSheet = (Excel.Worksheet) excelApp.ActiveSheet;
+
+            Excel.Range range = workSheet.UsedRange;
+
+            int rc = range.Rows.Count;
+            int cc = range.Columns.Count;
+
+            int rCnt;
+            int cCnt;
+            string str;
+            for (rCnt = 1; rCnt <= rc; rCnt++)
+            {
+                for (cCnt = 1; cCnt <= cc; cCnt++)
+                {
+                    str = (string)(range.Cells[rCnt, cCnt] as Excel.Range).Value2;
+                    MessageBox.Show(str);
+                }
+            }
         }
     }
 
