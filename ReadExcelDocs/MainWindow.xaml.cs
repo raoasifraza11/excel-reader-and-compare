@@ -22,12 +22,11 @@ namespace ReadExcelDocs
 
         private void btnBrowes_Click(object sender, RoutedEventArgs e)
         {
-            data.ID = 3456;
+           data.ID = 3456;
             data.Balance = 546.24;
 
             var excelApp = new Excel.Application();
             excelApp.Visible = true;
-
 
             excelApp.Workbooks.Add();
 
@@ -41,7 +40,14 @@ namespace ReadExcelDocs
 
         }
 
-      
+        private void excelbtn_Click(object sender, RoutedEventArgs e)
+        {
+            var excelApp = new Excel.Application();
+            excelApp.Visible = true;
+
+            excelApp.Workbooks.Open(@"E:\excelbook.xlsx");
+
+        }
     }
 
     // Account Class
