@@ -11,11 +11,17 @@ namespace ReadExcelDocs
     {
         // Create a list of accounts.
         Account data = new Account();
-        
+        private string row, col;
+        private List<string> data1;
+        private List<string> data2;
 
         public MainWindow()
         {
             InitializeComponent();
+            row = "A1";
+            col = "A4";
+            data1 = new List<string>();
+            data2 = new List<string>();
         }
 
         
@@ -48,7 +54,7 @@ namespace ReadExcelDocs
 
             Excel.Worksheet workSheet = (Excel.Worksheet) excelApp.ActiveSheet;
 
-            Excel.Range range = workSheet.Range[rangeRow.Text,rangeCol.Text];
+            Excel.Range range = workSheet.Range[row,col];
 
             int rc = range.Rows.Count;
             int cc = range.Columns.Count;
@@ -62,11 +68,33 @@ namespace ReadExcelDocs
                 {
                     str = (string)(range.Cells[rCnt, cCnt] as Excel.Range).Value2;
                     output.Text += str + "\n";
+                    data1.Add(str);
                 }
             }
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private void comparebtn_Click(object sender, RoutedEventArgs e)
+        {
+            List<string> notfound = new List<string>();
+            foreach(var item1 in data1)
+            {
+                foreach(var item2 in data2)
+                {
+                    if(item1 != item2)
+                    {
+                        notfound.Add(item1);
+                        break;
+                    }
+                }
+            }
+
+            foreach(var item in notfound)
+            {
+                compareOutput.Text = item;
+            }
+        }
+
+        private void second_Click(object sender, RoutedEventArgs e)
         {
             var excelApp = new Excel.Application { Visible = true };
 
@@ -74,20 +102,22 @@ namespace ReadExcelDocs
 
             Excel.Worksheet workSheet = (Excel.Worksheet)excelApp.ActiveSheet;
 
-            Excel.Range range = workSheet.Range[rangeRow.Text, rangeCol.Text];
+            Excel.Range range = workSheet.Range[row, col];
 
             int rc = range.Rows.Count;
             int cc = range.Columns.Count;
 
             int rCnt, cCnt;
             string str;
-            output.Text = string.Empty;
-            for (rCnt = 1; rCnt <= rc; rCnt++)
+            output_2.Text = string.Empty;
+            int i;
+            for (rCnt = 1, i = 0; rCnt <= rc; rCnt++)
             {
                 for (cCnt = 1; cCnt <= cc; cCnt++)
                 {
                     str = (string)(range.Cells[rCnt, cCnt] as Excel.Range).Value2;
-                    output.Text += str + "\n";
+                    output_2.Text += str + "\n";
+                    data2.Add(str);
                 }
             }
         }

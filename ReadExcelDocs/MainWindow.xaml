@@ -27,12 +27,12 @@
            Content='Selected Output:'
            HorizontalAlignment='Left'
            FontWeight='Bold'
-           Margin='10,145.21,0,147.83'
-           d:LayoutOverrides='Height' />
+           Margin='10,127.26,0,0'
+           VerticalAlignment='Top' />
 
     <TextBlock x:Name='output'
                HorizontalAlignment='Left'
-               Margin='10,0,0,126.87'
+               Margin='10,0,0,38.089'
                TextWrapping='Wrap'
                Text='TextBlock'
                VerticalAlignment='Bottom' />
@@ -55,23 +55,44 @@
            HorizontalAlignment='Left'
            Margin='126.608,11.01,0,0'
            VerticalAlignment='Top' />
-    <Button x:Name='button1'
+    <Button x:Name='secondbtn'
             Content='Open Second'
             HorizontalAlignment='Left'
             Margin='5.163,60.697,0,0'
             VerticalAlignment='Top'
             Width='83.993'
-            Click='button1_Click' />
+            Click='second_Click' />
     <Label x:Name='label_Copy'
            Content='Selected Output:'
            FontWeight='Bold'
-           Margin='219.415,145.21,193.191,147.83'
-           d:LayoutOverrides='Width, Height' />
-    <TextBlock x:Name='output_Copy'
-               Margin='219.415,0,234.636,126.87'
+           Margin='219.415,127.26,193.191,0'
+           d:LayoutOverrides='Width'
+           VerticalAlignment='Top' />
+    <TextBlock x:Name='output_2'
+               Margin='219.415,0,234.636,38.089'
                TextWrapping='Wrap'
                Text='TextBlock'
                VerticalAlignment='Bottom' />
+    <Button x:Name='comparebtn'
+            Content='Compare'
+            HorizontalAlignment='Left'
+            Margin='10,85.657,0,0'
+            VerticalAlignment='Top'
+            Width='75'
+            Click='comparebtn_Click' />
+    <Label x:Name='label_Copy1'
+           Content='Compare Result:'
+           FontWeight='Bold'
+           Margin='0,127.26,48.922,0'
+           VerticalAlignment='Top'
+           HorizontalAlignment='Right' />
+    <TextBlock x:Name='compareOutput'
+               Margin='0,0,77.563,38.089'
+               TextWrapping='Wrap'
+               Text='TextBlock'
+               VerticalAlignment='Bottom'
+               HorizontalAlignment='Right'
+               Width='62.949' />
 
   </Grid>
 </Window>
