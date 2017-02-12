@@ -42,13 +42,14 @@ namespace ReadExcelDocs
 
         private void excelbtn_Click(object sender, RoutedEventArgs e)
         {
+            
             var excelApp = new Excel.Application { Visible = false };
 
             excelApp.Workbooks.Open(@"E:\excelbook1.xlsx");
 
             Excel.Worksheet workSheet = (Excel.Worksheet) excelApp.ActiveSheet;
 
-            Excel.Range range = workSheet.Range["A1","A4"];
+            Excel.Range range = workSheet.Range[rangeRow.Text,rangeCol.Text];
 
             int rc = range.Rows.Count;
             int cc = range.Columns.Count;

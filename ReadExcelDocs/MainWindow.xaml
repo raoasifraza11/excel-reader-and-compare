@@ -35,13 +35,13 @@
                TextWrapping='Wrap'
                Text='TextBlock'
                VerticalAlignment='Top' />
-    <TextBox x:Name='textBox'
+    <TextBox x:Name='rangeCol'
              Height='23'
              Margin='212.586,13.97,184.414,0'
              TextWrapping='Wrap'
              Text='TextBox'
              VerticalAlignment='Top' />
-    <TextBox x:Name='textBox1'
+    <TextBox x:Name='rangeRow'
              Height='23'
              Margin='0,13.97,48.439,0'
              TextWrapping='Wrap'
