@@ -42,10 +42,9 @@ namespace ReadExcelDocs
 
         private void excelbtn_Click(object sender, RoutedEventArgs e)
         {
-            
-            var excelApp = new Excel.Application { Visible = false };
+            var excelApp = new Excel.Application { Visible = true };
 
-            excelApp.Workbooks.Open(@"E:\excelbook1.xlsx");
+            excelApp.Workbooks.Open(@"E:\first.xlsx");
 
             Excel.Worksheet workSheet = (Excel.Worksheet) excelApp.ActiveSheet;
 
@@ -54,8 +53,33 @@ namespace ReadExcelDocs
             int rc = range.Rows.Count;
             int cc = range.Columns.Count;
 
-            int rCnt;
-            int cCnt;
+            int rCnt, cCnt;
+            string str;
+            output.Text = string.Empty;
+            for (rCnt = 1; rCnt <= rc; rCnt++)
+            {
+                for (cCnt = 1; cCnt <= cc; cCnt++)
+                {
+                    str = (string)(range.Cells[rCnt, cCnt] as Excel.Range).Value2;
+                    output.Text += str + "\n";
+                }
+            }
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            var excelApp = new Excel.Application { Visible = true };
+
+            excelApp.Workbooks.Open(@"E:\second.xlsx");
+
+            Excel.Worksheet workSheet = (Excel.Worksheet)excelApp.ActiveSheet;
+
+            Excel.Range range = workSheet.Range[rangeRow.Text, rangeCol.Text];
+
+            int rc = range.Rows.Count;
+            int cc = range.Columns.Count;
+
+            int rCnt, cCnt;
             string str;
             output.Text = string.Empty;
             for (rCnt = 1; rCnt <= rc; rCnt++)
