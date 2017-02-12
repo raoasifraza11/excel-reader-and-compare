@@ -42,14 +42,13 @@ namespace ReadExcelDocs
 
         private void excelbtn_Click(object sender, RoutedEventArgs e)
         {
-            var excelApp = new Excel.Application();
-            excelApp.Visible = true;
+            var excelApp = new Excel.Application { Visible = false };
 
             excelApp.Workbooks.Open(@"E:\excelbook1.xlsx");
 
             Excel.Worksheet workSheet = (Excel.Worksheet) excelApp.ActiveSheet;
 
-            Excel.Range range = workSheet.UsedRange;
+            Excel.Range range = workSheet.Range["A1","A4"];
 
             int rc = range.Rows.Count;
             int cc = range.Columns.Count;
@@ -57,12 +56,13 @@ namespace ReadExcelDocs
             int rCnt;
             int cCnt;
             string str;
+            output.Text = string.Empty;
             for (rCnt = 1; rCnt <= rc; rCnt++)
             {
                 for (cCnt = 1; cCnt <= cc; cCnt++)
                 {
                     str = (string)(range.Cells[rCnt, cCnt] as Excel.Range).Value2;
-                    MessageBox.Show(str);
+                    output.Text += str + "\n";
                 }
             }
         }

@@ -5,20 +5,55 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ReadExcelDocs"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow"
+        Height="350"
+        Width="525">
   <Grid>
     <Button x:Name='button'
             Content='Create Excel File'
             HorizontalAlignment='Left'
             VerticalAlignment='Top'
-            Click='btnBrowes_Click' />
+            Click='btnBrowes_Click'
+            Margin='5.163,9,0,0' />
 
     <Button x:Name='excelbtn'
             Content='Open Excel File'
             HorizontalAlignment='Left'
             VerticalAlignment='Top'
-            Margin='5.163,24.96,0,0'
+            Margin='5.163,35.737,0,0'
             Click='excelbtn_Click' />
+    <Label x:Name='label'
+           Content='Selected Output:'
+           HorizontalAlignment='Left'
+           FontWeight='Bold'
+           VerticalAlignment='Top'
+           Margin='5.163,60.697,0,0' />
+
+    <TextBlock x:Name='output'
+               HorizontalAlignment='Left'
+               Margin='10,91.657,0,0'
+               TextWrapping='Wrap'
+               Text='TextBlock'
+               VerticalAlignment='Top' />
+    <TextBox x:Name='textBox'
+             Height='23'
+             Margin='212.586,13.97,184.414,0'
+             TextWrapping='Wrap'
+             Text='TextBox'
+             VerticalAlignment='Top' />
+    <TextBox x:Name='textBox1'
+             Height='23'
+             Margin='0,13.97,48.439,0'
+             TextWrapping='Wrap'
+             Text='TextBox'
+             VerticalAlignment='Top'
+             HorizontalAlignment='Right'
+             Width='120' />
+    <Label x:Name='label1'
+           Content='Range'
+           HorizontalAlignment='Left'
+           Margin='164.169,11.01,0,0'
+           VerticalAlignment='Top' />
 
   </Grid>
 </Window>
