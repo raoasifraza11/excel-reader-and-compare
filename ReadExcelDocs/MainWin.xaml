@@ -11,19 +11,81 @@
         TextElement.FontSize="13"
         TextOptions.TextFormattingMode="Ideal"
         TextOptions.TextRenderingMode="Auto"
-        Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         Title="Diff Checker - Tool to compare roll numbers to find differences"
         Height="300"
         Width="480"
         WindowStyle='ThreeDBorderWindow'
         WindowStartupLocation='CenterScreen'
-        Icon='Electricity-40.png'>
+        Icon='Electricity-40.png'
+        Background='{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}'>
   <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width='40*' />
+      <ColumnDefinition Width='124*' />
+      <ColumnDefinition Width='7*' />
+      <ColumnDefinition Width='254*' />
+      <ColumnDefinition Width='7*' />
+      <ColumnDefinition Width='40*' />
+    </Grid.ColumnDefinitions>
     <Grid.RowDefinitions>
-      <RowDefinition Height='35*' />
-      <RowDefinition Height='234*' />
+      <RowDefinition Height='45*' />
+      <RowDefinition Height='40*' />
+      <RowDefinition Height='40*' />
+      <RowDefinition Height='142*' />
     </Grid.RowDefinitions>
+    <StackPanel Grid.Column='0'
+                Grid.ColumnSpan='6'
+                Grid.Row='0'
+                d:LayoutOverrides='LeftMargin, RightMargin, TopMargin, BottomMargin'>
+      <materialDesign:Card Padding='10'>
+        <Label x:Name='appTitle'
+               Content='Diff Checker - Roll numbers to find differences'
+               TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+               TextElement.FontWeight="Medium"
+               TextElement.FontSize="18"
+               FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+               Margin='0,6.617,1.084,6.616'
+               VerticalAlignment='Center'
+               HorizontalAlignment='Center'
+               d:LayoutOverrides='TopMargin, BottomMargin' />
+      </materialDesign:Card>
+    </StackPanel>
+
+    <Label Name='synFile'
+           Content='Syngery File:'
+           TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+           TextElement.FontWeight="Medium"
+           TextElement.FontSize="14"
+           FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+           VerticalAlignment='Center'
+           HorizontalAlignment='Center'
+           Grid.Column='1'
+           Grid.Row='1' />
+    <Button x:Name='syngbtn'
+            Content='Browse'
+            Grid.Column='3'
+            Style="{DynamicResource MaterialDesignRaisedButton}"
+            Grid.Row='1'>
+
+    </Button>
+    <Label Name='moodlefile'
+           Content='Moodle File:'
+           TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+           TextElement.FontWeight="Medium"
+           TextElement.FontSize="14"
+           FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+           VerticalAlignment='Center'
+           HorizontalAlignment='Center'
+           Grid.Column='1'
+           Grid.Row='2' />
+    <Button x:Name='moddlebtn'
+            Content='Browse'
+            Grid.Column='3'
+            Style="{DynamicResource MaterialDesignRaisedButton}"
+            Grid.Row='2'>
+
+    </Button>
 
   </Grid>
 </Window>
