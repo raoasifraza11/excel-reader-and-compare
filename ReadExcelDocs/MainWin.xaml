@@ -32,6 +32,8 @@
       <RowDefinition Height='45*' />
       <RowDefinition Height='40*' />
       <RowDefinition Height='40*' />
+      <RowDefinition Height='10*' />
+      <RowDefinition Height='40*' />
       <RowDefinition Height='142*' />
     </Grid.RowDefinitions>
     <StackPanel Grid.Column='0'
@@ -45,10 +47,8 @@
                TextElement.FontWeight="Medium"
                TextElement.FontSize="18"
                FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
-               Margin='0,6.617,1.084,6.616'
-               VerticalAlignment='Center'
-               HorizontalAlignment='Center'
-               d:LayoutOverrides='TopMargin, BottomMargin' />
+               Margin='30.958,6.617,32.042,6.616'
+               HorizontalAlignment='Center' />
       </materialDesign:Card>
     </StackPanel>
 
@@ -86,6 +86,11 @@
             Grid.Row='2'>
 
     </Button>
-
+    <Button x:Name='comparebtn'
+            Content='Compare'
+            Grid.Column='1'
+            Grid.ColumnSpan='3'
+            Style="{DynamicResource MaterialDesignRaisedButton}"
+            Grid.Row='4' />
   </Grid>
 </Window>
