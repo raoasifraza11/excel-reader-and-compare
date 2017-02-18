@@ -13,13 +13,10 @@
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="MainWin"
+        Title="Diff Checker - Tool to compare roll numbers to find differences"
         Height="300"
         Width="300">
-    <Grid>
-    <materialDesign:Card Padding="32"
-                         Margin="16">
-      <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}">My First Material Design App</TextBlock>
-    </materialDesign:Card>
+  <Grid>
+    
   </Grid>
 </Window>
