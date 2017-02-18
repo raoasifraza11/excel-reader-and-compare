@@ -35,7 +35,7 @@ namespace ReadExcelDocs
             data.Balance = 546.24;
 
             var excelApp = new Excel.Application();
-            excelApp.Visible = true;
+            excelApp.Visible = false;
 
             excelApp.Workbooks.Add();
 
@@ -51,7 +51,7 @@ namespace ReadExcelDocs
 
         private void excelbtn_Click(object sender, RoutedEventArgs e)
         {
-            var excelApp = new Excel.Application { Visible = true };
+            var excelApp = new Excel.Application { Visible = false };
 
             excelApp.Workbooks.Open(@"E:\ee101synergy.xls");
 
@@ -81,7 +81,7 @@ namespace ReadExcelDocs
                 }
             }
             listView.ItemsSource = data1;
-            excelApp.Workbooks.Close();
+            //excelApp.Workbooks.Close();
             excelApp.Application.Quit();
         }
 
@@ -102,7 +102,7 @@ namespace ReadExcelDocs
 
         private void second_Click(object sender, RoutedEventArgs e)
         {
-            var excelApp = new Excel.Application { Visible = true };
+            var excelApp = new Excel.Application { Visible = false };
 
             excelApp.Workbooks.Open(@"E:\EE101spring2017_Attendances_20170131-0006.xlsx");
 
@@ -117,8 +117,8 @@ namespace ReadExcelDocs
             int rCnt, cCnt;
             string str;
             //output_2.Text = string.Empty;
-            int i;
-            for (rCnt = 1, i = 0; rCnt <= rc; rCnt++)
+            // int i; no need more
+            for (rCnt = 1; /* i = 0 */ rCnt <= rc; rCnt++)
             {
                 for (cCnt = 1; cCnt <= cc; cCnt++)
                 {
@@ -127,8 +127,10 @@ namespace ReadExcelDocs
                     data2.Add(str);
                 }
             }
+
             listView1.ItemsSource = data2;
-            excelApp.Workbooks.Close();
+            // don't need to close workbook
+            //excelApp.Workbooks.Close();
 
             excelApp.Application.Quit();
         }
