@@ -11,12 +11,19 @@
         TextElement.FontSize="13"
         TextOptions.TextFormattingMode="Ideal"
         TextOptions.TextRenderingMode="Auto"
-        Background="{DynamicResource MaterialDesignPaper}"
+        Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         Title="Diff Checker - Tool to compare roll numbers to find differences"
         Height="300"
-        Width="300">
+        Width="480"
+        WindowStyle='ThreeDBorderWindow'
+        WindowStartupLocation='CenterScreen'
+        Icon='Electricity-40.png'>
   <Grid>
-    
+    <Grid.RowDefinitions>
+      <RowDefinition Height='35*' />
+      <RowDefinition Height='234*' />
+    </Grid.RowDefinitions>
+
   </Grid>
 </Window>
