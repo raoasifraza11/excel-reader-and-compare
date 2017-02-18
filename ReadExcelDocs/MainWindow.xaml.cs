@@ -18,10 +18,13 @@ namespace ReadExcelDocs
         public MainWindow()
         {
             InitializeComponent();
-            row = "A1";
-            col = "A4";
+            row = "D2";
+            col = "D50";
             data1 = new List<string>();
             data2 = new List<string>();
+
+
+
         }
 
         
@@ -50,7 +53,7 @@ namespace ReadExcelDocs
         {
             var excelApp = new Excel.Application { Visible = true };
 
-            excelApp.Workbooks.Open(@"E:\first.xlsx");
+            excelApp.Workbooks.Open(@"E:\ee101synergy.xls");
 
             Excel.Worksheet workSheet = (Excel.Worksheet) excelApp.ActiveSheet;
 
@@ -58,15 +61,21 @@ namespace ReadExcelDocs
 
             int rc = range.Rows.Count;
             int cc = range.Columns.Count;
-
+            
             int rCnt, cCnt;
+
+            //
+
+            //string a = "ABCD-0448";
+            //string required = a.Substring(5);
+
             string str;
             output.Text = string.Empty;
             for (rCnt = 1; rCnt <= rc; rCnt++)
             {
                 for (cCnt = 1; cCnt <= cc; cCnt++)
                 {
-                    str = (string)(range.Cells[rCnt, cCnt] as Excel.Range).Value2;
+                    str = (string)((range.Cells[rCnt, cCnt] as Excel.Range).Value2).ToString().Substring(15);
                     output.Text += str + "\n";
                     data1.Add(str);
                 }
@@ -78,19 +87,17 @@ namespace ReadExcelDocs
             List<string> notfound = new List<string>();
             foreach(var item1 in data1)
             {
-                foreach(var item2 in data2)
+                if (!(data2.Contains(item1)))
                 {
-                    if(item1 != item2)
-                    {
-                        notfound.Add(item1);
-                        break;
-                    }
+                    notfound.Add(item1);
                 }
             }
 
+            compareOutput.Text = "";
+
             foreach(var item in notfound)
             {
-                compareOutput.Text = item;
+                compareOutput.Text += item + "\n";
             }
         }
 
@@ -98,10 +105,11 @@ namespace ReadExcelDocs
         {
             var excelApp = new Excel.Application { Visible = true };
 
-            excelApp.Workbooks.Open(@"E:\second.xlsx");
+            excelApp.Workbooks.Open(@"E:\EE101spring2017_Attendances_20170131-0006.xlsx");
 
             Excel.Worksheet workSheet = (Excel.Worksheet)excelApp.ActiveSheet;
-
+            row = "B5";
+            col = "B53";
             Excel.Range range = workSheet.Range[row, col];
 
             int rc = range.Rows.Count;
@@ -115,7 +123,7 @@ namespace ReadExcelDocs
             {
                 for (cCnt = 1; cCnt <= cc; cCnt++)
                 {
-                    str = (string)(range.Cells[rCnt, cCnt] as Excel.Range).Value2;
+                    str = (string)((range.Cells[rCnt, cCnt] as Excel.Range).Value2).ToString();
                     output_2.Text += str + "\n";
                     data2.Add(str);
                 }
