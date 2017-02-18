@@ -18,7 +18,9 @@
         WindowStyle='ThreeDBorderWindow'
         WindowStartupLocation='CenterScreen'
         Icon='Electricity-40.png'
-        Background='{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}'>
+        Background='{DynamicResource {x:Static SystemColors.HighlightBrushKey}}'
+        Foreground='{DynamicResource {x:Static SystemColors.DesktopBrushKey}}'
+        BorderBrush='{DynamicResource {x:Static SystemColors.HighlightBrushKey}}'>
   <Grid>
     <Grid.ColumnDefinitions>
       <ColumnDefinition Width='40*' />
@@ -70,7 +72,8 @@
             Content='Browse'
             Grid.Column='3'
             Style="{DynamicResource MaterialDesignRaisedButton}"
-            Grid.Row='2'>
+            Grid.Row='2'
+            Background='{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}'>
 
     </Button>
     <Label Name='moodlefile'
@@ -87,20 +90,21 @@
             Content='Browse'
             Grid.Column='3'
             Style="{DynamicResource MaterialDesignRaisedButton}"
-            Grid.Row='4'>
-
-    </Button>
+            Grid.Row='4'
+            Background='{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}' />
     <Button x:Name='comparebtn'
             Content='Compare'
             Grid.Column='1'
             Grid.ColumnSpan='3'
             Style="{DynamicResource MaterialDesignRaisedButton}"
-            Grid.Row='6' />
+            Grid.Row='6'
+            Background='{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}' />
     <Button x:Name='showresultbtn'
             Content='Show Results'
             Grid.Column='1'
             Grid.ColumnSpan='3'
             Style="{DynamicResource MaterialDesignRaisedButton}"
-            Grid.Row='8'/>
+            Grid.Row='8'
+            Background='{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}' />
   </Grid>
 </Window>
