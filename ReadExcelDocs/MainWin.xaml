@@ -29,8 +29,12 @@
       <ColumnDefinition Width='40*' />
     </Grid.ColumnDefinitions>
     <Grid.RowDefinitions>
-      <RowDefinition Height='45*' />
+      <RowDefinition Height='65*' />
+      <RowDefinition Height='10*' />
       <RowDefinition Height='40*' />
+      <RowDefinition Height='10*' />
+      <RowDefinition Height='40*' />
+      <RowDefinition Height='10*' />
       <RowDefinition Height='40*' />
       <RowDefinition Height='10*' />
       <RowDefinition Height='40*' />
@@ -61,12 +65,12 @@
            VerticalAlignment='Center'
            HorizontalAlignment='Center'
            Grid.Column='1'
-           Grid.Row='1' />
+           Grid.Row='2' />
     <Button x:Name='syngbtn'
             Content='Browse'
             Grid.Column='3'
             Style="{DynamicResource MaterialDesignRaisedButton}"
-            Grid.Row='1'>
+            Grid.Row='2'>
 
     </Button>
     <Label Name='moodlefile'
@@ -78,12 +82,12 @@
            VerticalAlignment='Center'
            HorizontalAlignment='Center'
            Grid.Column='1'
-           Grid.Row='2' />
+           Grid.Row='4' />
     <Button x:Name='moddlebtn'
             Content='Browse'
             Grid.Column='3'
             Style="{DynamicResource MaterialDesignRaisedButton}"
-            Grid.Row='2'>
+            Grid.Row='4'>
 
     </Button>
     <Button x:Name='comparebtn'
@@ -91,6 +95,12 @@
             Grid.Column='1'
             Grid.ColumnSpan='3'
             Style="{DynamicResource MaterialDesignRaisedButton}"
-            Grid.Row='4' />
+            Grid.Row='6' />
+    <Button x:Name='showresultbtn'
+            Content='Show Results'
+            Grid.Column='1'
+            Grid.ColumnSpan='3'
+            Style="{DynamicResource MaterialDesignRaisedButton}"
+            Grid.Row='8'/>
   </Grid>
 </Window>
