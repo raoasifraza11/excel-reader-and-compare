@@ -70,16 +70,19 @@ namespace ReadExcelDocs
             //string required = a.Substring(5);
 
             string str;
-            output.Text = string.Empty;
+            //output.Text = string.Empty;
             for (rCnt = 1; rCnt <= rc; rCnt++)
             {
                 for (cCnt = 1; cCnt <= cc; cCnt++)
                 {
                     str = (string)((range.Cells[rCnt, cCnt] as Excel.Range).Value2).ToString().Substring(15);
-                    output.Text += str + "\n";
+                    //output.Text += str + "\n";
                     data1.Add(str);
                 }
             }
+            listView.ItemsSource = data1;
+            excelApp.Workbooks.Close();
+            excelApp.Application.Quit();
         }
 
         private void comparebtn_Click(object sender, RoutedEventArgs e)
@@ -93,12 +96,8 @@ namespace ReadExcelDocs
                 }
             }
 
-            compareOutput.Text = "";
+            listView2.ItemsSource = notfound;
 
-            foreach(var item in notfound)
-            {
-                compareOutput.Text += item + "\n";
-            }
         }
 
         private void second_Click(object sender, RoutedEventArgs e)
@@ -117,17 +116,21 @@ namespace ReadExcelDocs
 
             int rCnt, cCnt;
             string str;
-            output_2.Text = string.Empty;
+            //output_2.Text = string.Empty;
             int i;
             for (rCnt = 1, i = 0; rCnt <= rc; rCnt++)
             {
                 for (cCnt = 1; cCnt <= cc; cCnt++)
                 {
                     str = (string)((range.Cells[rCnt, cCnt] as Excel.Range).Value2).ToString();
-                    output_2.Text += str + "\n";
+                    //output_2.Text += str + "\n";
                     data2.Add(str);
                 }
             }
+            listView1.ItemsSource = data2;
+            excelApp.Workbooks.Close();
+
+            excelApp.Application.Quit();
         }
     }
 

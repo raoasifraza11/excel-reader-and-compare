@@ -29,13 +29,6 @@
            FontWeight='Bold'
            Margin='10,127.26,0,0'
            VerticalAlignment='Top' />
-
-    <TextBlock x:Name='output'
-               HorizontalAlignment='Left'
-               Margin='10,0,0,38.089'
-               TextWrapping='Wrap'
-               Text='TextBlock'
-               VerticalAlignment='Bottom' />
     <TextBox x:Name='rangeCol'
              Height='23'
              Margin='175.025,15.01,255.124,0'
@@ -68,11 +61,6 @@
            Margin='219.415,127.26,193.191,0'
            d:LayoutOverrides='Width'
            VerticalAlignment='Top' />
-    <TextBlock x:Name='output_2'
-               Margin='219.415,0,234.636,38.089'
-               TextWrapping='Wrap'
-               Text='TextBlock'
-               VerticalAlignment='Bottom' />
     <Button x:Name='comparebtn'
             Content='Compare'
             HorizontalAlignment='Left'
@@ -86,13 +74,34 @@
            Margin='0,127.26,48.922,0'
            VerticalAlignment='Top'
            HorizontalAlignment='Right' />
-    <TextBlock x:Name='compareOutput'
-               Margin='0,0,77.563,38.089'
-               TextWrapping='Wrap'
-               Text='TextBlock'
-               VerticalAlignment='Bottom'
-               HorizontalAlignment='Right'
-               Width='62.949' />
+    <ListView x:Name='listView'
+              HorizontalAlignment='Left'
+              Margin='14.393,158.22,0,60.78'
+              Width='100'>
+      <ListView.View>
+        <GridView>
+          <GridViewColumn />
+        </GridView>
+      </ListView.View>
+    </ListView>
+    <ListView x:Name='listView1'
+              Margin='223.809,158.22,228.191,60.78'>
+      <ListView.View>
+        <GridView>
+          <GridViewColumn />
+        </GridView>
+      </ListView.View>
+    </ListView>
+    <ListView x:Name='listView2'
+              HorizontalAlignment='Right'
+              Margin='0,158.22,40.512,60.78'
+              Width='100'>
+      <ListView.View>
+        <GridView>
+          <GridViewColumn />
+        </GridView>
+      </ListView.View>
+    </ListView>
 
   </Grid>
 </Window>
