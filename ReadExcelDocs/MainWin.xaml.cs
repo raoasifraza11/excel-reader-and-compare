@@ -11,19 +11,45 @@ namespace ReadExcelDocs
     /// </summary>
     public partial class MainWin : Window
     {
-        private string row, col;
+        //private Excel.Application excelApp;
+
         public MainWin()
         {
             InitializeComponent();
-            row = "D2";
-            col = "D50";
+            //excelApp = new Excel.Application { Visible = false };
         }
 
         private void syngbtn_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                run_excel_application();
+                var excelApp = new Excel.Application { Visible = true };
+
+                excelApp.Workbooks.Open(@"E:\ee101synergy.xls");
+
+                Excel.Worksheet workSheet = (Excel.Worksheet)excelApp.ActiveSheet;
+
+                Excel.Range range = workSheet.Range[synRow.Text.ToString(), synCol.Text.ToString()];
+                int rc = range.Rows.Count;
+                int cc = range.Columns.Count;
+
+                int rCnt, cCnt;
+                
+                //string a = "ABCD-0448";
+                //string required = a.Substring(5);
+
+                string str;
+                //output.Text = string.Empty;
+                for (rCnt = 1; rCnt <= rc; rCnt++)
+                {
+                    for (cCnt = 1; cCnt <= cc; cCnt++)
+                    {
+                        str = (string)((range.Cells[rCnt, cCnt] as Excel.Range).Value2).ToString().Substring(15);
+                        //output.Text += str + "\n";
+                        //data1.Add(str);
+                        MessageBox.Show(str);
+                    }
+                }
             }
             catch(Exception ex)
             {
@@ -49,14 +75,9 @@ namespace ReadExcelDocs
         {
             try
             {
-                var excelApp = new Excel.Application { Visible = false };
-
-                excelApp.Workbooks.Open(@"E:\ee101synergy.xls");
-
-                Excel.Worksheet workSheet = (Excel.Worksheet)excelApp.ActiveSheet;
-
-                Excel.Range range = workSheet.Range[row, col];
-            }catch(Exception ex)
+                
+            }
+            catch(Exception ex)
             {
                 throw ex;
             }
@@ -64,7 +85,6 @@ namespace ReadExcelDocs
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-             
         }
 
         private string file_browser()

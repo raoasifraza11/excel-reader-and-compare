@@ -25,12 +25,15 @@
         Closing='Window_Closing'>
   <Grid>
     <Grid.ColumnDefinitions>
-      <ColumnDefinition Width='40*' />
-      <ColumnDefinition Width='124*' />
+      <ColumnDefinition Width='42*' />
+      <ColumnDefinition Width='130*' />
       <ColumnDefinition Width='7*' />
-      <ColumnDefinition Width='254*' />
-      <ColumnDefinition Width='7*' />
-      <ColumnDefinition Width='40*' />
+      <ColumnDefinition Width='155*' />
+      <ColumnDefinition Width='9*' />
+      <ColumnDefinition Width='55*' />
+      <ColumnDefinition Width='9*' />
+      <ColumnDefinition Width='55*' />
+      <ColumnDefinition Width='32*' />
     </Grid.ColumnDefinitions>
     <Grid.RowDefinitions>
       <RowDefinition Height='46*' />
@@ -47,7 +50,7 @@
       <RowDefinition Height='61*' />
     </Grid.RowDefinitions>
     <StackPanel Grid.Column='0'
-                Grid.ColumnSpan='6'
+                Grid.ColumnSpan='9'
                 Grid.Row='0'
                 d:LayoutOverrides='LeftMargin, RightMargin, TopMargin, BottomMargin'>
       <materialDesign:Card Padding='10'>
@@ -68,19 +71,20 @@
            TextElement.FontWeight="Medium"
            TextElement.FontSize="14"
            FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
-           VerticalAlignment='Center'
-           HorizontalAlignment='Center'
            Grid.Column='1'
            Grid.Row='2'
-           Margin='19.731,1.05' />
+           Margin='19.842,1.051,19.842,1.05'
+           d:LayoutOverrides='LeftMargin, RightMargin, TopMargin, BottomMargin' />
     <Button x:Name='syngbtn'
             Content='Browse'
             Grid.Column='3'
             Style="{DynamicResource MaterialDesignRaisedButton}"
             Grid.Row='2'
             Background='{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}'
-            Margin='0,0.151,0,-3.251'
-            Click='syngbtn_Click'>
+            Margin='0,0.152,0,-3.251'
+            Click='syngbtn_Click'
+            Height='Auto'
+            d:LayoutOverrides='LeftMargin, RightMargin, TopMargin, BottomMargin'>
 
     </Button>
     <Label Name='moodlefile'
@@ -89,11 +93,10 @@
            TextElement.FontWeight="Medium"
            TextElement.FontSize="14"
            FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
-           VerticalAlignment='Center'
-           HorizontalAlignment='Center'
            Grid.Column='1'
            Grid.Row='4'
-           Margin='20.79,1.051,20.789,1.05' />
+           Margin='20.9,1.051,20.9,1.05'
+           d:LayoutOverrides='LeftMargin, RightMargin, TopMargin, BottomMargin' />
     <Button x:Name='moddlebtn'
             Content='Browse'
             Grid.Column='3'
@@ -101,7 +104,9 @@
             Grid.Row='4'
             Background='{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}'
             Margin='0,0.151,0,-3.25'
-            Click='moddlebtn_Click' />
+            Click='moddlebtn_Click'
+            Height='Auto'
+            d:LayoutOverrides='LeftMargin, RightMargin, TopMargin, BottomMargin' />
     <Button x:Name='comparebtn'
             Content='Compare Files'
             Grid.Column='1'
@@ -109,8 +114,10 @@
             Style="{DynamicResource MaterialDesignRaisedButton}"
             Grid.Row='6'
             Background='{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}'
-            Margin='0,0.15,0,-3.25'
-            Click='comparebtn_Click' />
+            Margin='0,0.15,0,-3.249'
+            Click='comparebtn_Click'
+            Height='Auto'
+            d:LayoutOverrides='LeftMargin, RightMargin, TopMargin, BottomMargin' />
     <Button x:Name='showresultbtn'
             Content='Show Results'
             Grid.Column='1'
@@ -118,12 +125,34 @@
             Style="{DynamicResource MaterialDesignRaisedButton}"
             Grid.Row='10'
             Background='{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}'
-            Margin='0,-1.107,0,0' />
+            Margin='0,-1.107,0,0.001'
+            Height='Auto'
+            d:LayoutOverrides='LeftMargin, RightMargin, TopMargin, BottomMargin' />
     <ProgressBar Grid.Column='1'
-                 Grid.ColumnSpan='3'
                  HorizontalAlignment='Left'
-                 Height='20'
                  Grid.Row='8'
-                 />
+                 Margin='0,4.45'
+                 Width='2'
+                 d:LayoutOverrides='LeftMargin, RightMargin, TopMargin, BottomMargin' />
+    <TextBox x:Name='synCol'
+             Grid.Column='5'
+             Grid.Row='2'
+             TextWrapping='Wrap'
+             Text='D3' />
+    <TextBox x:Name='synRow'
+             Grid.Column='7'
+             Grid.Row='2'
+             TextWrapping='Wrap'
+             Text='D2' />
+    <TextBox x:Name='moodCol'
+             Grid.Column='5'
+             Grid.Row='4'
+             TextWrapping='Wrap'
+             Text='Col' />
+    <TextBox x:Name='moodRow'
+             Grid.Column='7'
+             Grid.Row='4'
+             TextWrapping='Wrap'
+             Text='Row' />
   </Grid>
 </Window>
