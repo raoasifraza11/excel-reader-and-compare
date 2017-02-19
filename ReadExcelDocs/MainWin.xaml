@@ -13,14 +13,16 @@
         TextOptions.TextRenderingMode="Auto"
         FontFamily="{DynamicResource MaterialDesignFont}"
         Title="Diff Checker - Tool to compare roll numbers to find differences"
-        Height="300"
-        Width="480"
+        Height="320"
+        Width="500"
         WindowStyle='ThreeDBorderWindow'
         WindowStartupLocation='CenterScreen'
         Icon='Electricity-40.png'
-        Background='{DynamicResource {x:Static SystemColors.HighlightBrushKey}}'
         Foreground='{DynamicResource {x:Static SystemColors.DesktopBrushKey}}'
-        BorderBrush='{DynamicResource {x:Static SystemColors.HighlightBrushKey}}'>
+        BorderBrush='{DynamicResource {x:Static SystemColors.HighlightBrushKey}}'
+        ResizeMode='NoResize'
+        Background='{DynamicResource {x:Static SystemColors.HotTrackBrushKey}}'
+        Closing='Window_Closing'>
   <Grid>
     <Grid.ColumnDefinitions>
       <ColumnDefinition Width='40*' />
@@ -31,16 +33,18 @@
       <ColumnDefinition Width='40*' />
     </Grid.ColumnDefinitions>
     <Grid.RowDefinitions>
-      <RowDefinition Height='65*' />
+      <RowDefinition Height='46*' />
+      <RowDefinition Height='7*' />
+      <RowDefinition Height='29*' />
+      <RowDefinition Height='7*' />
+      <RowDefinition Height='29*' />
+      <RowDefinition Height='7*' />
+      <RowDefinition Height='29*' />
+      <RowDefinition Height='7*' />
+      <RowDefinition Height='29*' />
       <RowDefinition Height='10*' />
-      <RowDefinition Height='40*' />
-      <RowDefinition Height='10*' />
-      <RowDefinition Height='40*' />
-      <RowDefinition Height='10*' />
-      <RowDefinition Height='40*' />
-      <RowDefinition Height='10*' />
-      <RowDefinition Height='40*' />
-      <RowDefinition Height='142*' />
+      <RowDefinition Height='31*' />
+      <RowDefinition Height='61*' />
     </Grid.RowDefinitions>
     <StackPanel Grid.Column='0'
                 Grid.ColumnSpan='6'
@@ -67,13 +71,16 @@
            VerticalAlignment='Center'
            HorizontalAlignment='Center'
            Grid.Column='1'
-           Grid.Row='2' />
+           Grid.Row='2'
+           Margin='19.731,1.05' />
     <Button x:Name='syngbtn'
             Content='Browse'
             Grid.Column='3'
             Style="{DynamicResource MaterialDesignRaisedButton}"
             Grid.Row='2'
-            Background='{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}'>
+            Background='{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}'
+            Margin='0,0.151,0,-3.251'
+            Click='syngbtn_Click'>
 
     </Button>
     <Label Name='moodlefile'
@@ -85,26 +92,38 @@
            VerticalAlignment='Center'
            HorizontalAlignment='Center'
            Grid.Column='1'
-           Grid.Row='4' />
+           Grid.Row='4'
+           Margin='20.79,1.051,20.789,1.05' />
     <Button x:Name='moddlebtn'
             Content='Browse'
             Grid.Column='3'
             Style="{DynamicResource MaterialDesignRaisedButton}"
             Grid.Row='4'
-            Background='{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}' />
+            Background='{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}'
+            Margin='0,0.151,0,-3.25'
+            Click='moddlebtn_Click' />
     <Button x:Name='comparebtn'
-            Content='Compare'
+            Content='Compare Files'
             Grid.Column='1'
             Grid.ColumnSpan='3'
             Style="{DynamicResource MaterialDesignRaisedButton}"
             Grid.Row='6'
-            Background='{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}' />
+            Background='{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}'
+            Margin='0,0.15,0,-3.25'
+            Click='comparebtn_Click' />
     <Button x:Name='showresultbtn'
             Content='Show Results'
             Grid.Column='1'
             Grid.ColumnSpan='3'
             Style="{DynamicResource MaterialDesignRaisedButton}"
-            Grid.Row='8'
-            Background='{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}' />
+            Grid.Row='10'
+            Background='{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}'
+            Margin='0,-1.107,0,0' />
+    <ProgressBar Grid.Column='1'
+                 Grid.ColumnSpan='3'
+                 HorizontalAlignment='Left'
+                 Height='20'
+                 Grid.Row='8'
+                 />
   </Grid>
 </Window>
