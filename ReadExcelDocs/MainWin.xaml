@@ -127,7 +127,8 @@
             Background='{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}'
             Margin='0,-1.107,0,0.001'
             Height='Auto'
-            d:LayoutOverrides='LeftMargin, RightMargin, TopMargin, BottomMargin' />
+            d:LayoutOverrides='LeftMargin, RightMargin, TopMargin, BottomMargin'
+            Click='showresultbtn_Click' />
     <ProgressBar Grid.Column='1'
                  HorizontalAlignment='Left'
                  Grid.Row='8'
@@ -138,7 +139,7 @@
              Grid.Column='5'
              Grid.Row='2'
              TextWrapping='Wrap'
-             Text='D3' />
+             Text='D50' />
     <TextBox x:Name='synRow'
              Grid.Column='7'
              Grid.Row='2'
@@ -148,11 +149,23 @@
              Grid.Column='5'
              Grid.Row='4'
              TextWrapping='Wrap'
-             Text='Col' />
+             Text='B53' />
     <TextBox x:Name='moodRow'
              Grid.Column='7'
              Grid.Row='4'
              TextWrapping='Wrap'
-             Text='Row' />
+             Text='B5' />
+    <ListView x:Name='listView'
+              Grid.Column='5'
+              Grid.ColumnSpan='3'
+              Grid.RowSpan='5'
+              Grid.Row='6'>
+      <ListView.View>
+        <GridView>
+          <GridViewColumn />
+        </GridView>
+      </ListView.View>
+    </ListView>
+
   </Grid>
 </Window>
