@@ -21,31 +21,37 @@ namespace ReadExcelDocs
     public partial class TempProgram : Window
     {
         // Required variables
-        private string synRow, synCol, modRow, modCol;
+        //private string synRow, synCol, modRow, modCol;
+        private List<string> synData;
 
         public TempProgram()
         {
             InitializeComponent();
             // Intilize local variables or Entities
-            synRow = synRangeRow.Text.ToString();
-            synCol = synRangeCol.Text.ToString();
-            modRow = modCol = null;
+            //synRow = synCol = modRow = modCol = null;
         }
 
         private void synergybtn_Click(object sender, RoutedEventArgs e)
         {
             synTittle.Text = Core.getFile();
 
-            var excelApp = new Excel.Application { Visible = false };
+            var excelApp = new Excel.Application { Visible = true };
             excelApp.Workbooks.Open(@"E:\EE101spring2017_Attendances_20170131-0006.xlsx");
             Excel.Worksheet workSheet = (Excel.Worksheet)excelApp.ActiveSheet;
 
-            string row = synRow;
-            string col = synCol;
+            string row = synRangeRow.Text.ToString();
+            string col = synRangeCol.Text.ToString();
             //string[] SelectedRange = { synRangeRow.Text.ToString(), synRangeCol.Text.ToString() };
 
             Excel.Range range = workSheet.Range[row, col];
-            
+            for (int i = 1; i <= range.Rows.Count; i++)
+            {
+                synData.Add((string)((range.Cells[range.Row, 1]
+                as Excel.Range).Value2).ToString());
+            }
+
+            excelApp.Workbooks.Close();
+            excelApp.Application.Quit();
         }
 
         private void moodlebtn_Click(object sender, RoutedEventArgs e)
