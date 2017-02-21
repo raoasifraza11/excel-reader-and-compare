@@ -23,5 +23,15 @@ namespace ReadExcelDocs
         {
             InitializeComponent();
         }
+
+        private void synergybtn_Click(object sender, RoutedEventArgs e)
+        {
+            synTittle.Text = Core.getFile();
+        }
+
+        private void moodlebtn_Click(object sender, RoutedEventArgs e)
+        {
+            moodleTitle.Text = Core.getFile().ToString();
+        }
     }
 }

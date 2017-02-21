@@ -62,6 +62,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Core.cs" />
     <Compile Include="TempProgram.xaml.cs">
       <DependentUpon>TempProgram.xaml</DependentUpon>
     </Compile>

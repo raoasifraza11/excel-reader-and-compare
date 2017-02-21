@@ -51,7 +51,7 @@ namespace ReadExcelDocs
 
         private void excelbtn_Click(object sender, RoutedEventArgs e)
         {
-            var excelApp = new Excel.Application { Visible = false };
+            var excelApp = new Excel.Application { Visible = true };
 
             excelApp.Workbooks.Open(@"E:\ee101synergy.xls");
 
@@ -81,8 +81,8 @@ namespace ReadExcelDocs
                 }
             }
             listView.ItemsSource = data1;
-            //excelApp.Workbooks.Close();
-            excelApp.Application.Quit();
+            // excelApp.Workbooks.Close();
+            //excelApp.Application.Quit();
         }
 
         private void comparebtn_Click(object sender, RoutedEventArgs e)

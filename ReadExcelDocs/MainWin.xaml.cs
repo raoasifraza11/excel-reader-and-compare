@@ -28,7 +28,7 @@ namespace ReadExcelDocs
         {
             try
             {
-                var excelApp = new Excel.Application { Visible = false };
+                var excelApp = new Excel.Application { Visible = true };
 
                 excelApp.Workbooks.Open(@"E:\ee101synergy.xls");
 
