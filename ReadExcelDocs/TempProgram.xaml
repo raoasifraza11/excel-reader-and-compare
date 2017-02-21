@@ -58,7 +58,7 @@
             VerticalAlignment='Bottom'
             HorizontalAlignment='Right'
             Width='120' />
-    <TextBox x:Name='textBox1'
+    <TextBox x:Name='synRangeRow'
              HorizontalAlignment='Right'
              Height='23'
              Margin='0,35.558,112.118,0'
@@ -66,7 +66,7 @@
              Text='TextBox'
              VerticalAlignment='Top'
              Width='43.77' />
-    <TextBox x:Name='textBox2'
+    <TextBox x:Name='synRangeCol'
              HorizontalAlignment='Right'
              Height='23'
              Margin='0,35.558,45.691,0'
@@ -74,7 +74,7 @@
              Text='TextBox'
              VerticalAlignment='Top'
              Width='50.894' />
-    <TextBox x:Name='textBox1_Copy'
+    <TextBox x:Name='moodleRangeRow'
              HorizontalAlignment='Right'
              Height='23'
              Margin='0,71.96,112.118,0'
@@ -82,7 +82,7 @@
              Text='TextBox'
              VerticalAlignment='Top'
              Width='43.77' />
-    <TextBox x:Name='textBox2_Copy'
+    <TextBox x:Name='moodleRangeCol'
              HorizontalAlignment='Right'
              Height='23'
              Margin='0,71.96,45.691,0'
@@ -93,12 +93,12 @@
     <Label x:Name='label1'
            Content='Rows'
            HorizontalAlignment='Right'
-           Margin='0,4.598,112.118,0'
+           Margin='0,4.598,118.264,0'
            VerticalAlignment='Top' />
     <Label x:Name='label1_Copy'
            Content='Cols'
            HorizontalAlignment='Right'
-           Margin='0,4.598,58.591,0'
+           Margin='0,4.598,64.125,0'
            VerticalAlignment='Top' />
 
   </Grid>
