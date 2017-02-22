@@ -21,12 +21,13 @@ namespace ReadExcelDocs
         public TempProgram()
         {
             InitializeComponent();
-            // Intilize local variables or Entities
-            //synRow = synCol = modRow = modCol = null;
+            // Intilize the Variables
             synData = new List<string>();
             moodleData = new List<string>();
             compareOneToTwo = new List<string>();
             compareTwoToOne = new List<string>();
+
+            // Login username
             username.Content = Environment.UserName;
         }
 
