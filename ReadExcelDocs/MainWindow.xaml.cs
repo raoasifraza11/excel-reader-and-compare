@@ -31,11 +31,11 @@ namespace ReadExcelDocs
             username.Content = Environment.UserName;
         }
 
+       
         private void synergybtn_Click(object sender, RoutedEventArgs e)
         {
             synTittle.Text = Core.getFilePath().ToString();
-
-
+            
             OpenExcelApplication(synTittle.Text, synData, synTittle.Name);
 
         }
