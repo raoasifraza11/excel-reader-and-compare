@@ -145,5 +145,17 @@ namespace ReadExcelDocs
             }
 
         }
+        //Reseting lists used   & textboxex
+        private void resetBtn_Click(object sender, RoutedEventArgs e)
+        {
+            synData.Clear();
+            moodleData.Clear();
+            compareOneToTwo.Clear(); 
+            compareTwoToOne.Clear();
+            synTittle.Text = "FileName";
+            moodleTitle.Text = "FileName";
+
+
+        }
     }
 }
