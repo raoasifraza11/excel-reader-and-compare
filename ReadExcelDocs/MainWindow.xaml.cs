@@ -31,19 +31,17 @@ namespace ReadExcelDocs
             username.Content = Environment.UserName;
         }
 
-       
+
         private void synergybtn_Click(object sender, RoutedEventArgs e)
         {
             synTittle.Text = Core.getFilePath().ToString();
-            
-            OpenExcelApplication(synTittle.Text, synData, synTittle.Name);
 
         }
 
         private void moodlebtn_Click(object sender, RoutedEventArgs e)
         {
             moodleTitle.Text = Core.getFilePath().ToString();
-            OpenExcelApplication(moodleTitle.Text, moodleData, moodleTitle.Name);
+          
         }
 
         private void viewResult_Click(object sender, RoutedEventArgs e)
@@ -128,6 +126,13 @@ namespace ReadExcelDocs
 
         private void compare_Click(object sender, RoutedEventArgs e)
         {
+            //reading data from snergy
+            OpenExcelApplication(synTittle.Text, synData, synTittle.Name);
+            //reading data from moodles
+            OpenExcelApplication(moodleTitle.Text, moodleData, moodleTitle.Name);
+
+
+
             foreach (var item in synData)
             {
                 if (!(moodleData.Contains(item)))
@@ -153,7 +158,7 @@ namespace ReadExcelDocs
             compareOneToTwo.Clear(); 
             compareTwoToOne.Clear();
             synTittle.Text = "FileName";
-            moodleTitle.Text = "FileName";
+            moodleTitle.Text="FileName";
 
 
         }
