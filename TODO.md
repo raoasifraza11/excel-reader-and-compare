@@ -10,5 +10,6 @@
 * Result File Generate
 * History Mangae Last 10 Activities
 * ICON and LOGO
+* Memory Optimization
 * Refactroing code
 * Final Touch
