@@ -98,10 +98,12 @@ namespace ReadExcelDocs
                             //as Excel.Range).Value2).ToString().Substring(((range.Cells[i, j]
                             //as Excel.Range).Value2).ToString().Length - 4, 4));
 
-                            data.Add((string)((range.Cells[i, j]
+                            string value = ((string)(((range.Cells[i, j]
                             as Excel.Range).Value2).ToString().Substring(((range.Cells[i, j]
-                            as Excel.Range).Value2).ToString().Length - 4, 4));
+                            as Excel.Range).Value2).ToString().Length - 4, 4)));
 
+                            value = value.TrimStart('0');
+                            data.Add(value);
                         }
                     }
                 }
