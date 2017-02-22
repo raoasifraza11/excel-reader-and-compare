@@ -43,14 +43,14 @@ namespace ReadExcelDocs
             synTittle.Text = Core.getFilePath().ToString();
 
 
-            OpenExcelApplication(synTittle.Text, synData);
+            OpenExcelApplication(synTittle.Text, synData, synTittle.Name);
 
         }
 
         private void moodlebtn_Click(object sender, RoutedEventArgs e)
         {
             moodleTitle.Text = Core.getFilePath().ToString();
-            OpenExcelApplication(moodleTitle.Text, moodleData);
+            OpenExcelApplication(moodleTitle.Text, moodleData, moodleTitle.Name);
         }
 
         private void viewResult_Click(object sender, RoutedEventArgs e)
@@ -65,7 +65,7 @@ namespace ReadExcelDocs
         }
 
 
-        private void OpenExcelApplication(string path, List<string> data)
+        private void OpenExcelApplication(string path, List<string> data, string filename)
         {
             try
             {
@@ -78,14 +78,29 @@ namespace ReadExcelDocs
                 //string[] SelectedRange = { synRangeRow.Text.ToString(), synRangeCol.Text.ToString() };
 
                 Excel.Range range = workSheet.Range[row, col];
-                for (int i = 1; i <= range.Rows.Count; i++)
+                if(filename == "synTittle")
                 {
-                    for (int j = 1; j <= range.Columns.Count; j++)
+                    for (int i = 1; i <= range.Rows.Count; i++)
                     {
-                        data.Add((string)((range.Cells[i, j]
-                        as Excel.Range).Value2).ToString());
+                        for (int j = 1; j <= range.Columns.Count; j++)
+                        {
+                            data.Add((string)((range.Cells[i, j]
+                            as Excel.Range).Value2).ToString().Substring(15));
+                        }
                     }
                 }
+                else
+                {
+                    for (int i = 1; i <= range.Rows.Count; i++)
+                    {
+                        for (int j = 1; j <= range.Columns.Count; j++)
+                        {
+                            data.Add((string)((range.Cells[i, j]
+                            as Excel.Range).Value2).ToString());
+                        }
+                    }
+                }
+                
 
                 excelApp.Workbooks.Close();
                 excelApp.Application.Quit();
