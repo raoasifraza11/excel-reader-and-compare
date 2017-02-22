@@ -1,4 +1,5 @@
-﻿<Window x:Class="ReadExcelDocs.TempProgram"
+﻿<Window x:Name='MainWindow'
+        x:Class="ReadExcelDocs.TempProgram"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -9,7 +10,8 @@
         Height="274.286"
         Width="475.325"
         Background='BlueViolet'
-        Foreground='White'>
+        Foreground='White'
+        BorderBrush='{DynamicResource {x:Static SystemColors.HotTrackBrushKey}}'>
   <Grid>
     <Grid.ColumnDefinitions>
       <ColumnDefinition Width='49*' />

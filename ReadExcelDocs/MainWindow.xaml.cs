@@ -42,6 +42,7 @@ namespace ReadExcelDocs
         {
             synTittle.Text = Core.getFilePath().ToString();
 
+
             OpenExcelApplication(synTittle.Text, synData);
 
         }
