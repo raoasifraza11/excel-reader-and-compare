@@ -74,6 +74,7 @@ namespace ReadExcelDocs
             r.moodleListView.ItemsSource = moodleData;
             r.moodleCount.Content = moodleData.Count.ToString();
 
+            // update source
             r.compareResult1to2.ItemsSource = compareOneToTwo;
             r.oneToTwocount.Content = compareOneToTwo.Count.ToString();
 
