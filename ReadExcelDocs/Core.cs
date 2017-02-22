@@ -9,7 +9,7 @@ namespace ReadExcelDocs
 {
     public static class Core
     {
-        public static string getFile()
+        public static string getFilePath()
         {
             OpenFileDialog getfile = new OpenFileDialog { Filter = "Excel files(*.xlsx) | *.xlsx" };
 
@@ -23,5 +23,6 @@ namespace ReadExcelDocs
                 return null;
             }
         }
+
     }
 }
