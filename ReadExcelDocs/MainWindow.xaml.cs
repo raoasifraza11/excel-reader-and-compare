@@ -36,6 +36,7 @@ namespace ReadExcelDocs
             moodleData = new List<string>();
             compareOneToTwo = new List<string>();
             compareTwoToOne = new List<string>();
+            username.Content = Environment.UserName;
         }
 
         private void synergybtn_Click(object sender, RoutedEventArgs e)

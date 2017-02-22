@@ -6,9 +6,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ReadExcelDocs"
         mc:Ignorable="d"
-        Title="TempProgram"
-        Height="274.286"
-        Width="475.325"
+        Title="Read Excel File Compare"
+        Icon='Electricity-40.png'
+        Height="274"
+        Width="485"
+        ResizeMode='NoResize'
         Background='BlueViolet'
         Foreground='White'
         BorderBrush='{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}'>
@@ -81,7 +83,7 @@
              Height='23'
              Margin='0,35.558,112.118,0'
              TextWrapping='Wrap'
-             Text='TextBox'
+             Text=''
              VerticalAlignment='Top'
              Width='43.77'
              Grid.Column='1' />
@@ -90,7 +92,7 @@
              Height='23'
              Margin='0,35.558,45.691,0'
              TextWrapping='Wrap'
-             Text='TextBox'
+             Text=''
              VerticalAlignment='Top'
              Width='50.894'
              Grid.Column='1' />
@@ -99,7 +101,7 @@
              Height='23'
              Margin='0,71.96,112.118,0'
              TextWrapping='Wrap'
-             Text='TextBox'
+             Text=''
              VerticalAlignment='Top'
              Width='43.77'
              Grid.Column='1' />
@@ -108,7 +110,7 @@
              Height='23'
              Margin='0,71.96,45.691,0'
              TextWrapping='Wrap'
-             Text='TextBox'
+             Text=''
              VerticalAlignment='Top'
              Width='50.894'
              Grid.Column='1' />
@@ -124,6 +126,19 @@
            Margin='0,4.598,64.125,0'
            VerticalAlignment='Top'
            Grid.Column='1' />
+    <Label x:Name='label2'
+           Content='Your are login as:'
+           HorizontalAlignment='Right'
+           Margin='0,4.598,312.431,0'
+           VerticalAlignment='Top'
+           Grid.Column='1'
+           Width='107.755' />
+    <Label x:Name='username'
+           Content='Username'
+           Grid.Column='1'
+           HorizontalAlignment='Left'
+           Margin='107.755,4.598,0,0'
+           VerticalAlignment='Top' />
 
   </Grid>
 </Window>
