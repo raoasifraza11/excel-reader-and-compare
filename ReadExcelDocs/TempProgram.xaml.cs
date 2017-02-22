@@ -29,6 +29,7 @@ namespace ReadExcelDocs
             InitializeComponent();
             // Intilize local variables or Entities
             //synRow = synCol = modRow = modCol = null;
+            synData = new List<string>();
         }
 
         private void synergybtn_Click(object sender, RoutedEventArgs e)
@@ -46,8 +47,11 @@ namespace ReadExcelDocs
             Excel.Range range = workSheet.Range[row, col];
             for (int i = 1; i <= range.Rows.Count; i++)
             {
-                synData.Add((string)((range.Cells[range.Row, 1]
-                as Excel.Range).Value2).ToString());
+                for (int j = 1; j <= range.Columns.Count; j++)
+                {
+                    synData.Add((string)((range.Cells[range.Row, range.Column]
+                    as Excel.Range).Value2).ToString());
+                }
             }
 
             excelApp.Workbooks.Close();
