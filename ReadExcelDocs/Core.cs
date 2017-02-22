@@ -11,7 +11,7 @@ namespace ReadExcelDocs
     {
         public static string getFilePath()
         {
-            OpenFileDialog getfile = new OpenFileDialog { Filter = "Excel files(*.xlsx) | *.xlsx" };
+            OpenFileDialog getfile = new OpenFileDialog { Filter = "Excel files(*.xlsx;*.xls) | *.xlsx;*.xls" };
 
 
             if (getfile.ShowDialog() == true)
