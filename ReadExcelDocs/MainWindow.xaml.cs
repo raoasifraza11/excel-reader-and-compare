@@ -59,10 +59,16 @@ namespace ReadExcelDocs
             Result r = new Result();
             r.Show();
             r.result1Listview.ItemsSource = synData;
+            r.synCount.Content = synData.Count.ToString();
+
             r.moodleListView.ItemsSource = moodleData;
+            r.moodleCount.Content = moodleData.Count.ToString();
 
             r.compareResult1to2.ItemsSource = compareOneToTwo;
+            r.oneToTwocount.Content = compareOneToTwo.Count.ToString();
+
             r.compareResult2to1.ItemsSource = compareTwoToOne;
+            r.twoToOnecount.Content = compareTwoToOne.Count.ToString();
         }
 
 
@@ -88,8 +94,14 @@ namespace ReadExcelDocs
                     {
                         for (int j = 1; j <= range.Columns.Count; j++)
                         {
+                            //data.Add((string)((range.Cells[i, j]
+                            //as Excel.Range).Value2).ToString().Substring(((range.Cells[i, j]
+                            //as Excel.Range).Value2).ToString().Length - 4, 4));
+
                             data.Add((string)((range.Cells[i, j]
-                            as Excel.Range).Value2).ToString().Substring(15));
+                            as Excel.Range).Value2).ToString().Substring(((range.Cells[i, j]
+                            as Excel.Range).Value2).ToString().Length - 4, 4));
+
                         }
                     }
                 }

@@ -6,11 +6,11 @@
         xmlns:local="clr-namespace:ReadExcelDocs"
         mc:Ignorable="d"
         Title="Result"
-        Height="300"
-        Width="614.026">
-  <Grid>
+        Height="310.266"
+        Width="664.216">
+  <Grid Margin='0,0,-8,0'>
     <ListView x:Name='result1Listview'
-              Margin='34.961,37.676,0,19.895'
+              Margin='94,38,0,56'
               HorizontalAlignment='Left'
               Width='100'>
       <ListView.View>
@@ -22,12 +22,12 @@
     <Label x:Name='label'
            Content='SynFile'
            HorizontalAlignment='Left'
-           Margin='63.792,12.74,0,0'
+           Margin='123,13,0,0'
            VerticalAlignment='Top' />
     <ListView x:Name='moodleListView'
-              Margin='168.208,37.676,0,19.895'
+              Margin='240,37,0,57'
               HorizontalAlignment='Left'
-              Width='106.233'>
+              Width='106'>
       <ListView.View>
         <GridView>
           <GridViewColumn />
@@ -36,13 +36,13 @@
     </ListView>
     <Label x:Name='label_Copy'
            Content='MoodleFile'
-           Margin='180.676,12.74,0,0'
+           Margin='253,12,0,0'
            VerticalAlignment='Top'
            HorizontalAlignment='Left'
-           Width='71.168' />
+           Width='71' />
     <ListView x:Name='compareResult1to2'
               HorizontalAlignment='Right'
-              Margin='0,37.676,184.312,19.895'
+              Margin='0,38,184,56'
               Width='100'>
       <ListView.View>
         <GridView>
@@ -58,7 +58,7 @@
            Width='71.168' />
     <ListView x:Name='compareResult2to1'
               HorizontalAlignment='Right'
-              Margin='0,37.676,47.948,19.895'
+              Margin='0,38,48,56'
               Width='100'>
       <ListView.View>
         <GridView>
@@ -72,6 +72,31 @@
            VerticalAlignment='Top'
            HorizontalAlignment='Right'
            Width='71.168' />
+    <Label x:Name='label1'
+           Content='Count:'
+           HorizontalAlignment='Left'
+           Margin='29,228,0,0'
+           VerticalAlignment='Top' />
+    <Label x:Name='synCount'
+           Content='synCount'
+           HorizontalAlignment='Left'
+           Margin='123,228,0,0'
+           VerticalAlignment='Top' />
+    <Label x:Name='moodleCount'
+           Content='moodleCount'
+           HorizontalAlignment='Left'
+           Margin='270,228,0,0'
+           VerticalAlignment='Top' />
+    <Label x:Name='oneToTwocount'
+           Content='1to2'
+           HorizontalAlignment='Left'
+           Margin='414,228,0,0'
+           VerticalAlignment='Top' />
+    <Label x:Name='twoToOnecount'
+           Content='2to1'
+           HorizontalAlignment='Left'
+           Margin='550,228,0,0'
+           VerticalAlignment='Top' />
 
   </Grid>
 </Window>
