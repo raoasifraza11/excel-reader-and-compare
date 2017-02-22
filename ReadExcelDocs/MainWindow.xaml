@@ -11,7 +11,7 @@
         Width="475.325"
         Background='BlueViolet'
         Foreground='White'
-        BorderBrush='{DynamicResource {x:Static SystemColors.HotTrackBrushKey}}'>
+        BorderBrush='{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}'>
   <Grid>
     <Grid.ColumnDefinitions>
       <ColumnDefinition Width='49*' />

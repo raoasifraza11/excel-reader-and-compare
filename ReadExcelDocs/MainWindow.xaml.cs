@@ -73,13 +73,16 @@ namespace ReadExcelDocs
                 excelApp.Workbooks.Open(path);
                 Excel.Worksheet workSheet = (Excel.Worksheet)excelApp.ActiveSheet;
 
-                string row = synRangeRow.Text.ToString();
-                string col = synRangeCol.Text.ToString();
+                //string row = synRangeRow.Text.ToString();
+                //string col = synRangeCol.Text.ToString();
                 //string[] SelectedRange = { synRangeRow.Text.ToString(), synRangeCol.Text.ToString() };
 
-                Excel.Range range = workSheet.Range[row, col];
                 if(filename == "synTittle")
                 {
+                    string row = synRangeRow.Text.ToString();
+                    string col = synRangeCol.Text.ToString();
+
+                    Excel.Range range = workSheet.Range[row, col];
                     for (int i = 1; i <= range.Rows.Count; i++)
                     {
                         for (int j = 1; j <= range.Columns.Count; j++)
@@ -91,6 +94,11 @@ namespace ReadExcelDocs
                 }
                 else
                 {
+
+                    string row = moodleRangeRow.Text.ToString();
+                    string col = moodleRangeCol.Text.ToString();
+
+                    Excel.Range range = workSheet.Range[row, col];
                     for (int i = 1; i <= range.Rows.Count; i++)
                     {
                         for (int j = 1; j <= range.Columns.Count; j++)
