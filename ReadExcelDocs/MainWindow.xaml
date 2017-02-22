@@ -7,7 +7,9 @@
         mc:Ignorable="d"
         Title="TempProgram"
         Height="274.286"
-        Width="475.325">
+        Width="475.325"
+        Background='BlueViolet'
+        Foreground='White'>
   <Grid>
     <Grid.ColumnDefinitions>
       <ColumnDefinition Width='49*' />
