@@ -4,6 +4,10 @@ namespace ReadExcelDocs
 {
     public static class Core
     {
+        /// <summary>
+        /// Static method for open fileBrowseDialog with excel filters
+        /// </summary>
+        /// <returns>string</returns>
         public static string getFilePath()
         {
             OpenFileDialog getfile = new OpenFileDialog { Filter = "Excel files(*.xlsx;*.xls) | *.xlsx;*.xls" };
