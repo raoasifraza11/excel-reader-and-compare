@@ -14,24 +14,24 @@
         Background='BlueViolet'
         Foreground='White'
         BorderBrush='{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}'>
-  <Grid>
-    <Grid.ColumnDefinitions>
-      <ColumnDefinition Width='49*' />
-      <ColumnDefinition Width='419*' />
-    </Grid.ColumnDefinitions>
-    <Label x:Name='label'
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width='49*' />
+            <ColumnDefinition Width='419*' />
+        </Grid.ColumnDefinitions>
+        <Label x:Name='label'
            Content='Synergy:'
            HorizontalAlignment='Left'
            Margin='-23.689,30.711,0,0'
            VerticalAlignment='Top'
            Grid.Column='1' />
-    <Label x:Name='label_Copy'
+        <Label x:Name='label_Copy'
            Content='Moodle:'
            HorizontalAlignment='Left'
            Margin='-23.689,70.96,0,0'
            VerticalAlignment='Top'
            Grid.Column='1' />
-    <TextBox x:Name='synTittle'
+        <TextBox x:Name='synTittle'
              Height='23'
              Margin='35.854,35.558,0,0'
              TextWrapping='Wrap'
@@ -40,7 +40,7 @@
              HorizontalAlignment='Left'
              Width='120'
              Grid.Column='1' />
-    <TextBox x:Name='moodleTitle'
+        <TextBox x:Name='moodleTitle'
              Height='23'
              Margin='35.854,70.96,0,0'
              TextWrapping='Wrap'
@@ -49,19 +49,19 @@
              HorizontalAlignment='Left'
              Width='120'
              Grid.Column='1' />
-    <Button x:Name='synergybtn'
+        <Button x:Name='synergybtn'
             Content='Browse'
             Margin='160.854,30.711,168.725,0'
             VerticalAlignment='Top'
             Click='synergybtn_Click'
             Grid.Column='1' />
-    <Button x:Name='moodlebtn'
+        <Button x:Name='moodlebtn'
             Content='Browse'
             Margin='160.854,66.113,168.725,0'
             VerticalAlignment='Top'
             Click='moodlebtn_Click'
             Grid.Column='1' />
-    <Button x:Name='compare'
+        <Button x:Name='compare'
             Content='Compare'
             Margin='35.854,0,0,73.04'
             d:LayoutOverrides='Height'
@@ -70,7 +70,7 @@
             Width='120'
             Grid.Column='1'
             Click='compare_Click' />
-    <Button x:Name='viewResult'
+        <Button x:Name='viewResult'
             Content='View Result'
             Margin='0,0,59.011,73.04'
             VerticalAlignment='Bottom'
@@ -78,7 +78,7 @@
             Width='120'
             Grid.Column='1'
             Click='viewResult_Click' />
-    <TextBox x:Name='synRangeRow'
+        <TextBox x:Name='synRangeRow'
              HorizontalAlignment='Right'
              Height='23'
              Margin='0,35.558,112.118,0'
@@ -87,7 +87,7 @@
              VerticalAlignment='Top'
              Width='43.77'
              Grid.Column='1' />
-    <TextBox x:Name='synRangeCol'
+        <TextBox x:Name='synRangeCol'
              HorizontalAlignment='Right'
              Height='23'
              Margin='0,35.558,45.691,0'
@@ -96,7 +96,7 @@
              VerticalAlignment='Top'
              Width='50.894'
              Grid.Column='1' />
-    <TextBox x:Name='moodleRangeRow'
+        <TextBox x:Name='moodleRangeRow'
              HorizontalAlignment='Right'
              Height='23'
              Margin='0,71.96,112.118,0'
@@ -105,7 +105,7 @@
              VerticalAlignment='Top'
              Width='43.77'
              Grid.Column='1' />
-    <TextBox x:Name='moodleRangeCol'
+        <TextBox x:Name='moodleRangeCol'
              HorizontalAlignment='Right'
              Height='23'
              Margin='0,71.96,45.691,0'
@@ -114,26 +114,26 @@
              VerticalAlignment='Top'
              Width='50.894'
              Grid.Column='1' />
-    <Label x:Name='label1'
+        <Label x:Name='label1'
            Content='Rows'
            HorizontalAlignment='Right'
            Margin='0,4.598,118.264,0'
            VerticalAlignment='Top'
            Grid.Column='1' />
-    <Label x:Name='label1_Copy'
+        <Label x:Name='label1_Copy'
            Content='Cols'
            HorizontalAlignment='Right'
            Margin='0,4.598,64.125,0'
            VerticalAlignment='Top'
            Grid.Column='1' />
-    <Label x:Name='label2'
+        <Label x:Name='label2'
            Content='Your are login as:'
            HorizontalAlignment='Right'
            Margin='0,4.598,312.431,0'
            VerticalAlignment='Top'
            Grid.Column='1'
            Width='107.755' />
-    <Label x:Name='username'
+        <Label x:Name='username'
            Content='Username'
            Grid.Column='1'
            Foreground='White'
@@ -141,6 +141,7 @@
            HorizontalAlignment='Left'
            Margin='107.755,4.598,0,0'
            VerticalAlignment='Top' />
+        <Button x:Name="resetBtn" Content="Reset" Grid.Column="1" HorizontalAlignment="Left" Margin="161,185,0,0" VerticalAlignment="Top" Width="86" Click="resetBtn_Click" Background="Red" />
 
-  </Grid>
+    </Grid>
 </Window>
