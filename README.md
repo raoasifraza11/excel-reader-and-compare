@@ -10,3 +10,9 @@ To get started with Read Excel File, simply run:
 
 ## TODO
 > [TODO](https://github.com/raoasifraza11/excel-reader-and-compare/blob/master/TODO.md) - Project TODO items
+
+## Contribution Guidelines
+
+Please follow the [TODO](https://github.com/raoasifraza11/excel-reader-and-compare/blob/master/TODO.md) List for contribution.
+
+Happy Codeing! :)
