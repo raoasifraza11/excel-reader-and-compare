@@ -136,6 +136,8 @@
     <Label x:Name='username'
            Content='Username'
            Grid.Column='1'
+           Foreground='White'
+           FontWeight='Bold'
            HorizontalAlignment='Left'
            Margin='107.755,4.598,0,0'
            VerticalAlignment='Top' />
