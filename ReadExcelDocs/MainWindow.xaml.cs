@@ -17,6 +17,11 @@ namespace ReadExcelDocs
         List<string> compareOneToTwo;
         List<string> compareTwoToOne;
 
+        // Result windows
+        Result r;
+        string moodlesrc;
+        string syncsrc;
+
         /// <summary>
         /// Constructor
         /// Intialize the Object
@@ -29,9 +34,19 @@ namespace ReadExcelDocs
             moodleData = new List<string>();
             compareOneToTwo = new List<string>();
             compareTwoToOne = new List<string>();
+            //preventing click
 
+            viewResult.IsEnabled = false;
+            resetBtn.IsEnabled = false;
+            comparebtn.IsEnabled = false;
             // Login username
             username.Content = Environment.UserName;
+            //prevent edditing in input boxex
+            synTittle.IsEnabled = false;
+            moodleTitle.IsEnabled = false;
+            //preventing muddles button click
+            moodlebtn.IsEnabled = false;
+            
         }
 
         /// <summary>
@@ -41,7 +56,19 @@ namespace ReadExcelDocs
         /// <param name="e"></param>
         private void synergybtn_Click(object sender, RoutedEventArgs e)
         {
-            synTittle.Text = Core.getFilePath().ToString();
+            string filename = Core.getFileName();
+            string ext = filename.Substring(filename.Length -3, 3);
+
+            if(ext == "xls")
+            {
+                syncsrc = Core.filepath;
+                synTittle.Text = filename;
+            }else
+            {
+                MessageBox.Show("You choose the worng file.");
+            }
+            moodlebtn.IsEnabled = true;
+            synergybtn.IsEnabled = false;
 
         }
 
@@ -52,8 +79,20 @@ namespace ReadExcelDocs
         /// <param name="e"></param>
         private void moodlebtn_Click(object sender, RoutedEventArgs e)
         {
-            moodleTitle.Text = Core.getFilePath().ToString();
+            string filename = Core.getFileName();
+            string ext = filename.Substring(filename.Length - 4, 4);
 
+            if (ext == "xlsx")
+            {
+                moodlesrc = Core.filepath;
+                moodleTitle.Text = filename;
+            }
+            else
+            {
+                MessageBox.Show("You choose the worng file.");
+            }
+            comparebtn.IsEnabled = true;
+            moodlebtn.IsEnabled = false;
         }
 
         /// <summary>
@@ -64,9 +103,10 @@ namespace ReadExcelDocs
         private void viewResult_Click(object sender, RoutedEventArgs e)
         {
             // launch result activity
-            Result r = new Result();
+            r = new Result();
             r.Show();
 
+           
             // populate the data
             r.result1Listview.ItemsSource = synData;
             r.synCount.Content = synData.Count.ToString();
@@ -80,6 +120,11 @@ namespace ReadExcelDocs
 
             r.compareResult2to1.ItemsSource = compareTwoToOne;
             r.twoToOnecount.Content = compareTwoToOne.Count.ToString();
+            //prevent click 
+            viewResult.IsEnabled = false;
+            //allowing click
+            resetBtn.IsEnabled = true;
+
         }
 
         /// <summary>
@@ -164,11 +209,12 @@ namespace ReadExcelDocs
         private void compare_Click(object sender, RoutedEventArgs e)
         {
             //reading data from snergy
-            OpenExcelApplication(synTittle.Text, synData, synTittle.Name);
+            OpenExcelApplication(syncsrc, synData, synTittle.Name);
             //reading data from moodles
-            OpenExcelApplication(moodleTitle.Text, moodleData, moodleTitle.Name);
-
-
+            OpenExcelApplication(moodlesrc, moodleData, moodleTitle.Name);
+            //sorting lists
+            synData.Sort();
+            moodleData.Sort();
             // Compare lists form 1 To 2
             foreach (var item in synData)
             {
@@ -187,6 +233,10 @@ namespace ReadExcelDocs
                 }
             }
 
+            // prevent the repeated clicks
+            comparebtn.IsEnabled = false;
+            viewResult.IsEnabled = true;
+
         }
 
         /// <summary>
@@ -201,7 +251,19 @@ namespace ReadExcelDocs
             compareOneToTwo.Clear();
             compareTwoToOne.Clear();
             synTittle.Text = moodleTitle.Text = "FileName";
-            
+
+            // 
+            if(r != null)
+            {
+                r.Close();
+            }
+
+            // rest original state
+            comparebtn.IsEnabled = true;
+            //hiddin rest button
+            resetBtn.IsEnabled = false;
+            synergybtn.IsEnabled = true;
+            moodlebtn.IsEnabled = true;
         }
     }
 }

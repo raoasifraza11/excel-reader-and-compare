@@ -61,7 +61,7 @@
             VerticalAlignment='Top'
             Click='moodlebtn_Click'
             Grid.Column='1' />
-        <Button x:Name='compare'
+        <Button x:Name='comparebtn'
             Content='Compare'
             Margin='35.854,0,0,73.04'
             d:LayoutOverrides='Height'
@@ -92,7 +92,7 @@
              Height='23'
              Margin='0,35.558,45.691,0'
              TextWrapping='Wrap'
-             Text='d38'
+             Text='d50'
              VerticalAlignment='Top'
              Width='50.894'
              Grid.Column='1' />
@@ -101,7 +101,7 @@
              Height='23'
              Margin='0,71.96,112.118,0'
              TextWrapping='Wrap'
-             Text='d5'
+             Text='b5'
              VerticalAlignment='Top'
              Width='43.77'
              Grid.Column='1' />
@@ -110,7 +110,7 @@
              Height='23'
              Margin='0,71.96,45.691,0'
              TextWrapping='Wrap'
-             Text='d42'
+             Text='b53'
              VerticalAlignment='Top'
              Width='50.894'
              Grid.Column='1' />
