@@ -18,7 +18,7 @@ namespace ReadExcelDocs
         List<string> compareTwoToOne;
 
         // Result windows
-        Result r;
+        Result ResultWindow;
         string moodlesrc;
         string syncsrc;
 
@@ -30,20 +30,16 @@ namespace ReadExcelDocs
         {
             InitializeComponent();
             // Intilize the Variables
-            synData = new List<string>();
-            moodleData = new List<string>();
-            compareOneToTwo = new List<string>();
-            compareTwoToOne = new List<string>();
+            synData = moodleData = compareOneToTwo = compareTwoToOne = new List<string>();
+            
             //preventing click
+            viewResult.IsEnabled = resetBtn.IsEnabled = comparebtn.IsEnabled = false;
 
-            viewResult.IsEnabled = false;
-            resetBtn.IsEnabled = false;
-            comparebtn.IsEnabled = false;
             // Login username
             username.Content = Environment.UserName;
             //prevent edditing in input boxex
-            synTittle.IsEnabled = false;
-            moodleTitle.IsEnabled = false;
+            synTittle.IsEnabled = moodleTitle.IsEnabled = false;
+
             //preventing muddles button click
             moodlebtn.IsEnabled = false;
             
@@ -103,23 +99,23 @@ namespace ReadExcelDocs
         private void viewResult_Click(object sender, RoutedEventArgs e)
         {
             // launch result activity
-            r = new Result();
-            r.Show();
+            ResultWindow = new Result();
+            ResultWindow.Show();
 
            
             // populate the data
-            r.result1Listview.ItemsSource = synData;
-            r.synCount.Content = synData.Count.ToString();
+            ResultWindow.result1Listview.ItemsSource = synData;
+            ResultWindow.synCount.Content = synData.Count.ToString();
 
-            r.moodleListView.ItemsSource = moodleData;
-            r.moodleCount.Content = moodleData.Count.ToString();
+            ResultWindow.moodleListView.ItemsSource = moodleData;
+            ResultWindow.moodleCount.Content = moodleData.Count.ToString();
 
             // update source
-            r.compareResult1to2.ItemsSource = compareOneToTwo;
-            r.oneToTwocount.Content = compareOneToTwo.Count.ToString();
+            ResultWindow.compareResult1to2.ItemsSource = compareOneToTwo;
+            ResultWindow.oneToTwocount.Content = compareOneToTwo.Count.ToString();
 
-            r.compareResult2to1.ItemsSource = compareTwoToOne;
-            r.twoToOnecount.Content = compareTwoToOne.Count.ToString();
+            ResultWindow.compareResult2to1.ItemsSource = compareTwoToOne;
+            ResultWindow.twoToOnecount.Content = compareTwoToOne.Count.ToString();
             //prevent click 
             viewResult.IsEnabled = false;
             //allowing click
@@ -253,9 +249,9 @@ namespace ReadExcelDocs
             synTittle.Text = moodleTitle.Text = "FileName";
 
             // 
-            if(r != null)
+            if(ResultWindow != null)
             {
-                r.Close();
+                ResultWindow.Close();
             }
 
             // rest original state

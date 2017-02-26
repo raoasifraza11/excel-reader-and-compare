@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using System.IO;
 
 namespace ReadExcelDocs
 {
@@ -15,7 +16,6 @@ namespace ReadExcelDocs
         /// <returns>string</returns>
         public static string getFilePath()
         {
-            
 
             if (getfile.ShowDialog() == true)
             {
@@ -31,10 +31,13 @@ namespace ReadExcelDocs
         public static string getFileName()
         {
             getFilePath();
-            string filename = getfile.SafeFileName;
+            return getfile.SafeFileName;
+        }
 
-            
-            return filename;
+
+        public static string getFileExtention()
+        {
+            return Path.GetExtension(getfile.FileName);
         }
 
     }
